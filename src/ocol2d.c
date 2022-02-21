@@ -91,13 +91,13 @@ bool CheckCollisionCircleOrientedRec(Vector2 center, float radius, Rectangle rec
     rotCenter.x = rotCenter.x + rec.x;
     rotCenter.y = rotCenter.y + rec.y;
 
-    CheckCollisionCircleRec(rotCenter, radius, rec);
+    return CheckCollisionCircleRec(rotCenter, radius, rec);
 }
 
 Interval2 GetInterval(Rectangle rec, Vector2 axis)
 {
     Vector2 min = { rec.x, rec.y };
-    Vector2 max = { rec.x + rec.width, rec.y + rec.height };V
+    Vector2 max = { rec.x + rec.width, rec.y + rec.height };
     Vector2 verts[] = { min, max, { min.x, max.y }, { max.x, min.y } };
 
     // each vertex is projected to the axis
